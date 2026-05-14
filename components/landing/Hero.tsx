@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1920&q=80";
+const heroImage = "/images/hero_01.jpeg";
 
 export function Hero() {
   return (
@@ -30,25 +29,24 @@ export function Hero() {
             Local vehicle care
           </p>
           <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            The 6 Garage — Protection, Detailing &amp; Finish Experts
+            The 6 Garage <br /> Detailing &amp; Light Maintenance
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg">
-            Paint protection film, ceramic coatings, tint, and detailing—done
-            with the right tools, trained technicians, and obsessive attention to
-            detail.
+            외부·내부 세차와 광택, 경정비까지—좋은 제품으로 꼼꼼히 진행하고, 직접
+            작업하고 싶을 때는 DIY에 맞춘 안내도 함께합니다.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="#book"
               className="inline-flex w-full min-w-[200px] items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand shadow-lg transition-opacity hover:opacity-90 sm:w-auto"
             >
-              Book your appointment
+              예약 일정
             </Link>
             <Link
               href="#services"
               className="inline-flex w-full min-w-[200px] items-center justify-center rounded-md border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 sm:w-auto"
             >
-              View services
+              서비스 보기
             </Link>
           </div>
         </div>

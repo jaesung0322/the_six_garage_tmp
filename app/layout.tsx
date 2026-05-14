@@ -23,6 +23,24 @@ export const metadata: Metadata = {
   title: "The 6 Garage | Vehicle Detailing & Paint Protection",
   description:
     "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
+  openGraph: {
+    title: "The 6 Garage | Vehicle Detailing & Paint Protection",
+    description:
+      "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
+    images: [
+      {
+        url: "/images/sns_01.jpg",
+        alt: "The 6 Garage",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The 6 Garage | Vehicle Detailing & Paint Protection",
+    description:
+      "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
+    images: ["/images/sns_01.jpg"],
+  },
 };
 
 export default function RootLayout({

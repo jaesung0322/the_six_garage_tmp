@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const nav = [
+  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#locations", label: "Locations" },
-  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -15,7 +15,7 @@ export function SiteHeader() {
           href="/"
           className="text-lg font-bold tracking-tight text-white sm:text-xl"
         >
-          The 6<span className="text-brand"> Garage</span>
+          The Six<span className="text-brand"> Garage</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-200 md:flex">
