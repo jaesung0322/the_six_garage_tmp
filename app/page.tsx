@@ -1,10 +1,10 @@
 import { CTABanner } from "@/components/landing/CTABanner";
-import { FeatureShowcase } from "@/components/landing/FeatureShowcase";
 import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
 import { LocationsBlock } from "@/components/landing/LocationsBlock";
 import { Reveal } from "@/components/landing/Reveal";
 import { ServiceGrid } from "@/components/landing/ServiceGrid";
+import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 
@@ -21,11 +21,13 @@ export default function Home() {
         </Reveal>
       </div>
       <main>
+        {/*
         <Reveal>
           <ServiceGrid />
         </Reveal>
+          */}
         <Reveal>
-          <FeatureShowcase />
+          <ServiceShowcase />
         </Reveal>
         <Reveal>
           <LocationsBlock />

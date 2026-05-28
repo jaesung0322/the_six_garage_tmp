@@ -15,7 +15,7 @@ export function SiteHeader() {
           href="/"
           className="text-lg font-bold tracking-tight text-white sm:text-xl"
         >
-          The Six<span className="text-brand"> Garage</span>
+          The 6<span className="text-brand"> Garage</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-200 md:flex">

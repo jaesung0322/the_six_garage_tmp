@@ -29,7 +29,7 @@ export function Hero() {
             Local vehicle care
           </p>
           <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            The 6 Garage <br /> Detailing &amp; Light Maintenance
+            The 6 Garage <br /> Detailing &amp; Auto Care Services
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg">
             외부·내부 세차와 광택, 경정비까지—좋은 제품으로 꼼꼼히 진행하고, 직접

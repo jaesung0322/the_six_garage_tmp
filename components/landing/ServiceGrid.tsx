@@ -3,25 +3,25 @@ import Link from "next/link";
 
 const tiles = [
   {
-    title: "Paint protection film",
+    title: "Car Wash",
     href: "#ppf",
     src: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
     alt: "Vehicle front with protective film context",
   },
   {
-    title: "Window tinting",
+    title: "Detailing",
     href: "#tint",
     src: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80",
     alt: "Car side window",
   },
   {
-    title: "Ceramic coating",
+    title: "Polishing",
     href: "#ceramic",
     src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
     alt: "Glossy sports car paint",
   },
   {
-    title: "Schedule online",
+    title: "Dress Up",
     href: "#book",
     src: "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=800&q=80",
     alt: "Service desk scheduling",
