@@ -38,7 +38,7 @@ const services: Service[] = [
     title: "셀프 세차 도우미",
     description:
       "세차시 세차에 필요한 모든 도구를 제공하며<br>사용만 하실 수 있도록 미리 준비하여 드립니다.<br>소요시간은 보통 1시간 30분 정도 소요되지만 오염 상태에 따라 변동 될 수 있습니다.",
-    ctaLabel: "자세히보기",
+    ctaLabel: "작업 영상 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_01_edit_02.jpg",
     imageAlt: "Sports car in studio lighting",
@@ -56,7 +56,7 @@ const services: Service[] = [
     title: "출장 픽업 세차(기본형)",
     description:
       "소요 시간은 약 2시간 30분 정도 소요되지만 작업 상황에 따라 변동될 수 있습니다.<br>차량 상태에 따라 진행 과정에 변화가 있을 수 있으며<br>오염 상태에 따라 추가 작업을 요청할 수 있습니다.",
-    ctaLabel: "자세히보기",
+    ctaLabel: "작업 영상 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_02_edit_02.jpg",
     imageAlt: "Performance car in garage",
@@ -73,7 +73,7 @@ const services: Service[] = [
     title: "출장 픽업 세차(광택형)",
     description:
       "소요 시간은 약 6시간 정도 소요되지만 작업 상황에 따라 변동될 수 있습니다.<br>차량 상태에 따라 진행 과정에 변화가 있을 수 있으며<br>오염 상태에 따라 추가 작업을 요청할 수 있습니다.",
-    ctaLabel: "자세히보기",
+    ctaLabel: "작업 영상 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_03_edit_02.jpg",
     imageAlt: "Car profile with tinted glass",
@@ -146,16 +146,7 @@ function ServiceRow({
 export function ServiceShowcase() {
   return (
     <section className="bg-brand py-4 sm:py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="border-b border-white/10 pb-10 text-center sm:pb-14">
-          <h2 className="text-balance text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
-            Full-service experience for detailing, protection &amp; coatings
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-pretty text-white/80">
-            Clear sections, strong imagery, and brand-forward CTAs—structured like
-            premium auto-care landing pages.
-          </p>
-        </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">    
         {services.map((service, index) => (
           <ServiceRow key={service.id} service={service} index={index} />
         ))}

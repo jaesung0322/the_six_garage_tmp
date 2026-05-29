@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const heroImage = "/images/hero_01.jpeg";
+const heroImage = "/images/hero_01_01.jpg";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-0 flex-1 flex-col bg-brand">
       <div className="relative flex min-h-0 flex-1 flex-col">
         <div className="absolute inset-0 min-h-0">
-          <div className="clip-slant-frame absolute inset-0 overflow-hidden [filter:drop-shadow(0_0_0_1.5px_rgba(51,102,0,0.85))]">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
               src={heroImage}
               alt="Professional vehicle bay"
@@ -28,8 +28,13 @@ export function Hero() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-lime-200">
             Local vehicle care
           </p>
-          <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            The 6 Garage <br /> Detailing &amp; Auto Care Services
+          <h1 className="text-balance font-bold leading-tight tracking-tight text-white">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              The 6 Garage
+            </span>
+            <span className="mt-1 block whitespace-nowrap text-lg sm:text-2xl md:text-3xl lg:text-4xl">
+              Detailing &amp; Auto Care Services
+            </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg">
             외부·내부 세차와 광택, 경정비까지—좋은 제품으로 꼼꼼히 진행하고, 직접

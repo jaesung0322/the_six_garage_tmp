@@ -29,6 +29,7 @@ export default function Home() {
         <Reveal>
           <ServiceShowcase />
         </Reveal>
+        {/*
         <Reveal>
           <LocationsBlock />
         </Reveal>
@@ -42,9 +43,11 @@ export default function Home() {
             variant="brand"
           />
         </Reveal>
+        */}
         <Reveal>
           <GalleryStrip />
         </Reveal>
+        {/*
         <Reveal>
           <CTABanner
             title="Time to get your vehicle to look its best"
@@ -54,6 +57,7 @@ export default function Home() {
             variant="dark"
           />
         </Reveal>
+        */}
         <Reveal>
           <SiteFooter />
         </Reveal>
