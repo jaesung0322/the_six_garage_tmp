@@ -38,7 +38,7 @@ const services: Service[] = [
     title: "셀프 세차 도우미",
     description:
       "세차시 세차에 필요한 모든 도구를 제공하며<br>사용만 하실 수 있도록 미리 준비하여 드립니다.<br>소요시간은 보통 1시간 30분 정도 소요되지만 오염 상태에 따라 변동 될 수 있습니다.",
-    ctaLabel: "작업 영상 보기",
+    ctaLabel: "작업 사진 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_01_edit_02.jpg",
     imageAlt: "Sports car in studio lighting",
@@ -56,7 +56,7 @@ const services: Service[] = [
     title: "출장 픽업 세차(기본형)",
     description:
       "소요 시간은 약 2시간 30분 정도 소요되지만 작업 상황에 따라 변동될 수 있습니다.<br>차량 상태에 따라 진행 과정에 변화가 있을 수 있으며<br>오염 상태에 따라 추가 작업을 요청할 수 있습니다.",
-    ctaLabel: "작업 영상 보기",
+    ctaLabel: "작업 사진 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_02_edit_02.jpg",
     imageAlt: "Performance car in garage",
@@ -73,7 +73,7 @@ const services: Service[] = [
     title: "출장 픽업 세차(광택형)",
     description:
       "소요 시간은 약 6시간 정도 소요되지만 작업 상황에 따라 변동될 수 있습니다.<br>차량 상태에 따라 진행 과정에 변화가 있을 수 있으며<br>오염 상태에 따라 추가 작업을 요청할 수 있습니다.",
-    ctaLabel: "작업 영상 보기",
+    ctaLabel: "작업 사진 보기",
     ctaHref: "#book",
     imageSrc: "/images/price_03_edit_02.jpg",
     imageAlt: "Car profile with tinted glass",
@@ -98,7 +98,7 @@ function ServiceRow({
     <div
       className={`clip-slant-frame relative h-full min-h-[280px] flex-1 overflow-hidden bg-white shadow-xl ring-1 ring-black/10 sm:min-h-[320px] lg:min-h-[360px] lg:z-20 ${service.reverse ? "lg:-ml-[10px]" : "lg:-mr-[10px]"}`}
     >
-      <div className="flex h-full flex-col justify-center p-8 sm:p-10">
+      <div className="flex h-full flex-col justify-start px-8 pt-14 pb-8 sm:px-10 sm:pt-20 sm:pb-10">
         {service.icon}
         <h3 className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl">
           {service.title}

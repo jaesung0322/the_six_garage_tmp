@@ -37,8 +37,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg">
-            외부·내부 세차와 광택, 경정비까지—좋은 제품으로 꼼꼼히 진행하고, 직접
-            작업하고 싶을 때는 DIY에 맞춘 안내도 함께합니다.
+            외부 · 내부 세차 및 디테일링 그리고 좋은 제품으로 광택을 꼼꼼히 진행하고<br/>차량 드레스 업 작업에 대한 맞춤 서비스도 함께합니다.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link

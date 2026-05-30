@@ -4,20 +4,16 @@ const footerColumns = [
   {
     title: "Services",
     links: [
-      ["Paint protection film", "#ppf"],
-      ["Ceramic coatings", "#ceramic"],
-      ["Window tinting", "#tint"],
-      ["Detailing", "#detailing"],
-      ["Vinyl wraps", "#wrap"],
-      ["Paintless dent repair", "#pdr"],
+      ["Car Wash", "#CarWash"],
+      ["Detailing", "#Detailing"],
+      ["Polishing", "#Polishing"],
+      ["Dress Up", "#DressUp"]
     ],
   },
   {
     title: "Locations",
     links: [
-      ["Main facility", "#locations"],
-      ["North District", "#locations"],
-      ["West End", "#locations"],
+      ["Naver Map", "#NaverMap"]
     ],
   },
   {
@@ -25,20 +21,18 @@ const footerColumns = [
     links: [
       ["About", "#about"],
       ["Careers", "#book"],
-      ["FAQs", "#book"],
-      ["Reviews", "#book"],
+      ["Reviews", "#book"]
     ],
   },
   {
     title: "Contact",
     links: [
-      ["Book online", "#book"],
-      ["Privacy", "#book"],
-      ["Terms", "#book"],
+      ["Kakao Talk", "#KakaoTalk"],
+      ["Naver Blog", "#NaverBlog"],
+      ["Daangn", "#Daangn"]
     ],
   },
-];
-
+]; 
 export function SiteFooter() {
   return (
     <footer id="contact" className="scroll-mt-20 bg-zinc-950 text-zinc-400">
@@ -60,9 +54,6 @@ export function SiteFooter() {
             >
               Book appointment
             </Link>
-            <span className="rounded-md border border-white/15 px-5 py-2.5 text-sm text-zinc-300">
-              Social links → add later
-            </span>
           </div>
         </div>
         <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-4">

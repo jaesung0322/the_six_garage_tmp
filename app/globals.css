@@ -44,3 +44,27 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Swiper 갤러리 커스터마이즈 */
+.gallery-swiper .swiper {
+  padding: 8px 4px 44px;
+}
+.gallery-swiper .swiper-button-prev,
+.gallery-swiper .swiper-button-next {
+  color: #18181b;
+  width: 32px;
+  height: 32px;
+}
+.gallery-swiper .swiper-button-prev::after,
+.gallery-swiper .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: 700;
+}
+.gallery-swiper .swiper-pagination-bullet {
+  background: #71717a;
+  opacity: 0.5;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  background: #18181b;
+  opacity: 1;
+}

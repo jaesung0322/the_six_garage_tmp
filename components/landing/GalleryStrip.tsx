@@ -1,4 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const shots = [
   "/images/car_wash_01.jpg",
@@ -15,23 +24,38 @@ export function GalleryStrip() {
           The 6 Garage 제공 서비스
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-zinc-600">
-          Car wash, Detailing, Polishing, Dress Up
+          Car Wash, Detailing, Polishing, Dress Up
         </p>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-          {shots.map((src, i) => (
-            <div
-              key={src}
-              className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-md ring-1 ring-black/5"
-            >
-              <Image
-                src={src}
-                alt={`Shop gallery image ${i + 1}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 50vw, 25vw"
-              />
-            </div>
-          ))}
+
+        <div className="gallery-swiper mt-10">
+          <Swiper
+            modules={[Grid, Navigation, Pagination]}
+            spaceBetween={12}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            navigation
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                grid: { rows: 2, fill: "row" },
+                spaceBetween: 16,
+              },
+            }}
+          >
+            {shots.map((src, i) => (
+              <SwiperSlide key={src}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-md ring-1 ring-black/5">
+                  <Image
+                    src={src}
+                    alt={`Shop gallery image ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
