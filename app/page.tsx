@@ -3,6 +3,7 @@ import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
 import { LocationsBlock } from "@/components/landing/LocationsBlock";
 import { Reveal } from "@/components/landing/Reveal";
+import { ScheduleCalendar } from "@/components/landing/ScheduleCalendar";
 import { ServiceGrid } from "@/components/landing/ServiceGrid";
 import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -46,6 +47,9 @@ export default function Home() {
         */}
         <Reveal>
           <GalleryStrip />
+        </Reveal>
+        <Reveal>
+          <ScheduleCalendar />
         </Reveal>
         {/*
         <Reveal>
