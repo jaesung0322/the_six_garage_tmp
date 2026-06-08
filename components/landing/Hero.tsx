@@ -41,17 +41,11 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
-              href="#book"
+              href="#services"
               className="inline-flex w-full min-w-[200px] items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand shadow-lg transition-opacity hover:opacity-90 sm:w-auto"
             >
-              예약 일정
-            </Link>
-            <Link
-              href="#services"
-              className="inline-flex w-full min-w-[200px] items-center justify-center rounded-md border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 sm:w-auto"
-            >
               서비스 보기
-            </Link>
+            </Link>            
           </div>
         </div>
       </div>

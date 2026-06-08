@@ -5,14 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function ServiceShowcase() {
-  // 첫 번째 카드의 작업 사진 미리보기 상태
+  // 첫 번째 카드(셀프 세차 도우미) 작업 사진 미리보기 상태
   const [selectedSrc, setSelectedSrc] = useState("/images/a45_01.jpg");
   const [hoveredSrc, setHoveredSrc] = useState<string | null>(null);
   const isHoverPreview =
     hoveredSrc !== null && hoveredSrc !== selectedSrc;
 
+  // 두 번째 카드(출장 픽업 세차 기본형) 작업 사진 미리보기 상태
+  const [selectedSrc2, setSelectedSrc2] = useState("/images/gls_01.jpg");
+  const [hoveredSrc2, setHoveredSrc2] = useState<string | null>(null);
+  const isHoverPreview2 =
+    hoveredSrc2 !== null && hoveredSrc2 !== selectedSrc2;
+
+  // 세 번째 카드(출장 픽업 세차 광택형) 작업 사진 미리보기 상태
+  const [selectedSrc3, setSelectedSrc3] = useState("/images/exp_01.jpg");
+  const [hoveredSrc3, setHoveredSrc3] = useState<string | null>(null);
+  const isHoverPreview3 =
+    hoveredSrc3 !== null && hoveredSrc3 !== selectedSrc3;
+
   return (
-    <section className="bg-brand py-4 sm:py-8">
+    <section id="services" className="bg-brand py-4 sm:py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* 서비스 1: 셀프 세차 도우미 */}
         <article className="scroll-mt-24 py-8 first:pt-4 sm:py-10 lg:first:pt-6">
@@ -322,12 +334,218 @@ export function ServiceShowcase() {
                   <br />
                   오염 상태에 따라 추가 작업을 요청할 수 있습니다.
                 </p>
-                <Link
-                  href="#book"
-                  className="mt-6 inline-flex w-fit items-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
-                >
-                  작업 사진 보기
-                </Link>
+
+                {/* 작업 사진 미리보기: 메인 1장 + 4x2 썸네일 */}
+                <div className="mt-6 space-y-2">
+                  {/* 메인 이미지: 클릭된 이미지(베이스) 위에 호버 이미지가 페이드 인 */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-zinc-100 ring-1 ring-black/5">
+                    <Image
+                      src={selectedSrc2}
+                      alt="작업 사진 메인"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    <Image
+                      src={hoveredSrc2 ?? selectedSrc2}
+                      alt=""
+                      aria-hidden
+                      fill
+                      className={`object-cover transition-opacity duration-500 ease-out ${
+                        isHoverPreview2 ? "opacity-100" : "opacity-0"
+                      }`}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+
+                  {/* 4 x 2 썸네일 (각 항목 호버=미리보기, 클릭=확정) */}
+                  <div className="grid grid-cols-4 gap-2">
+                    <button
+                      type="button"
+                      aria-label="작업 사진 1 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_01.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_01.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_01.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_01.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_01.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_01.jpg"
+                        alt="작업 사진 1"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 2 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_02.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_02.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_02.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_02.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_02.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_02.jpg"
+                        alt="작업 사진 2"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 3 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_03.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_03.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_03.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_03.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_03.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_03.jpg"
+                        alt="작업 사진 3"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 4 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_04.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_04.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_04.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_04.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_04.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_04.jpg"
+                        alt="작업 사진 4"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 5 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_05.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_05.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_05.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_05.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_05.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_05.jpg"
+                        alt="작업 사진 5"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 6 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_06.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_06.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_06.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_06.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_06.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_06.jpg"
+                        alt="작업 사진 6"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 7 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_07.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_07.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_07.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_07.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_07.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_07.jpg"
+                        alt="작업 사진 7"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 8 보기"
+                      aria-pressed={selectedSrc2 === "/images/gls_08.jpg"}
+                      onMouseEnter={() => setHoveredSrc2("/images/gls_08.jpg")}
+                      onMouseLeave={() => setHoveredSrc2(null)}
+                      onFocus={() => setHoveredSrc2("/images/gls_08.jpg")}
+                      onBlur={() => setHoveredSrc2(null)}
+                      onClick={() => setSelectedSrc2("/images/gls_08.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc2 === "/images/gls_08.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/gls_08.jpg"
+                        alt="작업 사진 8"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="clip-slant-frame relative flex-1 self-stretch overflow-hidden bg-white shadow-lg ring-1 ring-white/10 lg:z-10">
@@ -376,12 +594,218 @@ export function ServiceShowcase() {
                   <br />
                   오염 상태에 따라 추가 작업을 요청할 수 있습니다.
                 </p>
-                <Link
-                  href="#book"
-                  className="mt-6 inline-flex w-fit items-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
-                >
-                  작업 사진 보기
-                </Link>
+
+                {/* 작업 사진 미리보기: 메인 1장 + 4x2 썸네일 */}
+                <div className="mt-6 space-y-2">
+                  {/* 메인 이미지: 클릭된 이미지(베이스) 위에 호버 이미지가 페이드 인 */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-zinc-100 ring-1 ring-black/5">
+                    <Image
+                      src={selectedSrc3}
+                      alt="작업 사진 메인"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    <Image
+                      src={hoveredSrc3 ?? selectedSrc3}
+                      alt=""
+                      aria-hidden
+                      fill
+                      className={`object-cover transition-opacity duration-500 ease-out ${
+                        isHoverPreview3 ? "opacity-100" : "opacity-0"
+                      }`}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+
+                  {/* 4 x 2 썸네일 (각 항목 호버=미리보기, 클릭=확정) */}
+                  <div className="grid grid-cols-4 gap-2">
+                    <button
+                      type="button"
+                      aria-label="작업 사진 1 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_01.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_01.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_01.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_01.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_01.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_01.jpg"
+                        alt="작업 사진 1"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 2 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_02.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_02.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_02.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_02.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_02.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_02.jpg"
+                        alt="작업 사진 2"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 3 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_03.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_03.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_03.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_03.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_03.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_03.jpg"
+                        alt="작업 사진 3"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 4 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_04.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_04.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_04.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_04.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_04.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_04.jpg"
+                        alt="작업 사진 4"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 5 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_05.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_05.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_05.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_05.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_05.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_05.jpg"
+                        alt="작업 사진 5"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 6 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_06.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_06.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_06.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_06.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_06.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_06.jpg"
+                        alt="작업 사진 6"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 7 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_07.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_07.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_07.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_07.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_07.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_07.jpg"
+                        alt="작업 사진 7"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="작업 사진 8 보기"
+                      aria-pressed={selectedSrc3 === "/images/exp_08.jpg"}
+                      onMouseEnter={() => setHoveredSrc3("/images/exp_08.jpg")}
+                      onMouseLeave={() => setHoveredSrc3(null)}
+                      onFocus={() => setHoveredSrc3("/images/exp_08.jpg")}
+                      onBlur={() => setHoveredSrc3(null)}
+                      onClick={() => setSelectedSrc3("/images/exp_08.jpg")}
+                      className={`relative aspect-square overflow-hidden rounded-md ring-1 ring-black/5 transition-all duration-200 hover:scale-[1.03] hover:ring-2 hover:ring-brand focus-visible:scale-[1.03] focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none ${
+                        selectedSrc3 === "/images/exp_08.jpg"
+                          ? "ring-2 ring-brand"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src="/images/exp_08.jpg"
+                        alt="작업 사진 8"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 25vw, 12vw"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="clip-slant-frame relative flex-1 self-stretch overflow-hidden bg-white shadow-lg ring-1 ring-white/10 lg:z-10">

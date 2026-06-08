@@ -48,10 +48,10 @@ export default function Home() {
         <Reveal>
           <GalleryStrip />
         </Reveal>
+        {/*
         <Reveal>
           <ScheduleCalendar />
         </Reveal>
-        {/*
         <Reveal>
           <CTABanner
             title="Time to get your vehicle to look its best"

@@ -35,7 +35,7 @@ const footerColumns = [
 ]; 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="scroll-mt-20 bg-zinc-950 text-zinc-400">
+    <footer id="contact" className="bg-zinc-950 text-zinc-400">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-10 sm:flex-row sm:items-center">
           <div>
@@ -46,15 +46,7 @@ export function SiteFooter() {
               We make your car look its best—with protection that lasts and
               finishes you will notice every time you walk up to it.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="#book"
-              className="rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
-            >
-              Book appointment
-            </Link>
-          </div>
+          </div>        
         </div>
         <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {footerColumns.map((col) => (

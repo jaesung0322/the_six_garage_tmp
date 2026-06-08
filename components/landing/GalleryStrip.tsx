@@ -18,7 +18,7 @@ const shots = [
 
 export function GalleryStrip() {
   return (
-    <section className="border-y border-zinc-200 bg-zinc-100 py-12 sm:py-16">
+    <section id="gallery" className="border-y border-zinc-200 bg-zinc-100 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-xl font-bold text-zinc-900 sm:text-2xl">
           The 6 Garage 제공 서비스

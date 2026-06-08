@@ -11,6 +11,18 @@
    * 10° 값에 tan(7.5°)/tan(10°) ≈ 0.747 적용.
    */
   --slant-shift: clamp(16px, 1.8vw, 47px);
+  /* 고정 헤더 높이 (내부 py-3 24px + 버튼 h-10 40px + border-b 1px) */
+  --header-h: 65px;
+}
+
+/*
+ * 해시(anchor) 이동 시 고정 헤더에 가려지지 않도록
+ * 스크롤 컨테이너(html)에 헤더 높이만큼 상단 패딩을 잡아준다.
+ * → 클릭한 섹션 상단 모서리가 헤더 하단 모서리와 정확히 맞닿는다.
+ */
+html {
+  scroll-padding-top: var(--header-h);
+  scroll-behavior: smooth;
 }
 
 /* 상단 히어로·중단 피처: 상하 경계가 서로 평행한 절단 */
