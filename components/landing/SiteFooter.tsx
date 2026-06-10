@@ -1,38 +1,5 @@
 import Link from "next/link";
 
-const footerColumns = [
-  {
-    title: "Services",
-    links: [
-      ["Car Wash", "#CarWash"],
-      ["Detailing", "#Detailing"],
-      ["Polishing", "#Polishing"],
-      ["Dress Up", "#DressUp"]
-    ],
-  },
-  {
-    title: "Locations",
-    links: [
-      ["Naver Map", "#NaverMap"]
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      ["About", "#about"],
-      ["Careers", "#book"],
-      ["Reviews", "#book"]
-    ],
-  },
-  {
-    title: "Contact",
-    links: [
-      ["Kakao Talk", "#KakaoTalk"],
-      ["Naver Blog", "#NaverBlog"],
-      ["Daangn", "#Daangn"]
-    ],
-  },
-]; 
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-zinc-950 text-zinc-400">
@@ -46,25 +13,70 @@ export function SiteFooter() {
               We make your car look its best—with protection that lasts and
               finishes you will notice every time you walk up to it.
             </p>
-          </div>        
+          </div>
         </div>
-        <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
-          {footerColumns.map((col) => (
-            <div key={col.title}>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
-                {col.title}
-              </h3>
-              <ul className="mt-4 space-y-2 text-sm">
-                {col.links.map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="hover:text-white">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+              Services
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>
+                <Link href="#CarWash" className="hover:text-white">
+                  Car Wash
+                </Link>
+              </li>
+              <li>
+                <Link href="#Detailing" className="hover:text-white">
+                  Detailing
+                </Link>
+              </li>
+              <li>
+                <Link href="#Polishing" className="hover:text-white">
+                  Polishing
+                </Link>
+              </li>
+              <li>
+                <Link href="#DressUp" className="hover:text-white">
+                  Dress Up
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+              Locations
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>
+                <Link href="#NaverMap" className="hover:text-white">
+                  Naver Map
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+              Contact
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>
+                <Link href="#KakaoTalk" className="hover:text-white">
+                  Kakao Talk
+                </Link>
+              </li>
+              <li>
+                <Link href="#NaverBlog" className="hover:text-white">
+                  Naver Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="#Daangn" className="hover:text-white">
+                  Daangn
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <p className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-zinc-500">
           © {new Date().getFullYear()} The 6 Garage. All rights reserved.

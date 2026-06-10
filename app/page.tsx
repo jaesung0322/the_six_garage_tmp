@@ -1,9 +1,8 @@
 import { CTABanner } from "@/components/landing/CTABanner";
 import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
-import { LocationsBlock } from "@/components/landing/LocationsBlock";
+import { Location } from "@/components/landing/Location";
 import { Reveal } from "@/components/landing/Reveal";
-import { ScheduleCalendar } from "@/components/landing/ScheduleCalendar";
 import { ServiceGrid } from "@/components/landing/ServiceGrid";
 import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -32,9 +31,6 @@ export default function Home() {
         </Reveal>
         {/*
         <Reveal>
-          <LocationsBlock />
-        </Reveal>
-        <Reveal>
           <CTABanner
             id="book"
             title="Protect your vehicle today"
@@ -48,10 +44,10 @@ export default function Home() {
         <Reveal>
           <GalleryStrip />
         </Reveal>
-        {/*
         <Reveal>
-          <ScheduleCalendar />
+          <Location />
         </Reveal>
+        {/*
         <Reveal>
           <CTABanner
             title="Time to get your vehicle to look its best"

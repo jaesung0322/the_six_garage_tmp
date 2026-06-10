@@ -21,7 +21,7 @@ export function GalleryStrip() {
     <section id="gallery" className="border-y border-zinc-200 bg-zinc-100 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-xl font-bold text-zinc-900 sm:text-2xl">
-          The 6 Garage 제공 서비스
+          The 6 Garage Work Gallery
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-zinc-600">
           Car Wash, Detailing, Polishing, Dress Up
@@ -31,13 +31,12 @@ export function GalleryStrip() {
           <Swiper
             modules={[Grid, Navigation, Pagination]}
             spaceBetween={12}
-            slidesPerView={1}
+            slidesPerView={2}
+            grid={{ rows: 2, fill: "row" }}
             pagination={{ clickable: true }}
             navigation
             breakpoints={{
               640: {
-                slidesPerView: 2,
-                grid: { rows: 2, fill: "row" },
                 spaceBetween: 16,
               },
             }}
@@ -50,7 +49,7 @@ export function GalleryStrip() {
                     alt={`Shop gallery image ${i + 1}`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    sizes="50vw"
                   />
                 </div>
               </SwiperSlide>

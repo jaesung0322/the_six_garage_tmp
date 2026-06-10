@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const nav = [
-  { href: "#top", label: "홈" },
-  { href: "#services", label: "서비스" },
-  { href: "#gallery", label: "갤러리" },
-  { href: "#contact", label: "연락처" },
+  { href: "#top", label: "HOME" },
+  { href: "#services", label: "SERVICES" },
+  { href: "#gallery", label: "GALLERY" },
+  { href: "#location", label: "LOCATION" },
 ];
 
 export function SiteHeader() {
@@ -117,7 +117,7 @@ export function SiteHeader() {
       >
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-6">
           <span className="text-base font-semibold tracking-tight text-zinc-300">
-            Menu
+            MENU
           </span>
           <button
             type="button"
