@@ -75,13 +75,23 @@ export function Location() {
           {/* 전화 — href의 번호와 텍스트를 실제 번호로 교체하세요 */}
           <div className="rounded-lg bg-white p-5 shadow-md ring-1 ring-black/5">
             <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
-              예약 문의
+              통화 예약 문의
             </p>
             <a
               href="tel:01040903476"
               className="mt-2 block text-lg font-semibold text-zinc-900 transition-colors hover:text-brand"
             >
               010-4090-3476
+            </a>
+            <br />
+            <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              카카오톡 예약 문의
+            </p>
+            <a
+              href="#"
+              className="mt-2 block text-lg font-semibold text-zinc-900 transition-colors hover:text-brand"
+            >
+              KAKAO TALK : @the6garage
             </a>
           </div>
 
@@ -146,7 +156,7 @@ export function Location() {
               </li>
               <li>
                 <Link
-                  href="#NaverBlog"
+                  href="https://blog.naver.com/6detailing"
                   aria-label="네이버 블로그 열기"
                   className="flex w-full items-center justify-between gap-2 rounded-md bg-[#03C75A] px-3 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 >
@@ -178,7 +188,7 @@ export function Location() {
               </li>
               <li>
                 <Link
-                  href="#Daangn"
+                  href="https://www.daangn.com/kr/local-profile/%EC%9D%B4%EB%8F%99%EC%8B%9D-%EC%84%B8%EC%B0%A8-citihr7tusrz/"
                   aria-label="당근 마켓 열기"
                   className="flex w-full items-center justify-between gap-2 rounded-md bg-[#FF7E36] px-3 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 >

@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 export function AboutStory() {
   return (
@@ -27,9 +27,9 @@ export function AboutStory() {
           <div className="space-y-5 text-base leading-relaxed text-white/85 sm:text-lg">
             <p>
               <span className="font-bold text-white">The 6 Garage</span>
-              는 오토케어 서비스를 제공하는
-              <span className="whitespace-nowrap"> 젊은 일명 차덕후의 </span>
-              개인 브랜드입니다.
+              는 오토케어 서비스를 제공하는{" "}
+              <br className="hidden lg:block" />
+              일명 젊은 차덕후의 개인 브랜드입니다.
             </p>
             <p>
               출장 픽업 세차만 해도 2년 차에 접어든 나름 경기 남부지역에서는
@@ -37,50 +37,20 @@ export function AboutStory() {
               서비스를 위해 매일 공부하며 노력하고 있습니다.
             </p>
             <p>
-              이미 당근 마켓 업체로는 단골이 100분이 넘으며, 후기만 약 60개.
-              심지어 별점 5점 만점을 유지 중인 이동식 세차에 이동식이
-              바로 저랍니다.
+              이미 당근 마켓 업체로는 꽤 많은 단골이 서비스를 애용해주고 계시며, 많은 후기와 더불어
+              아직까지 별점 5점 만점을 유지 중인 이동식 세차가 바로 더 식스 게러지입니다.
             </p>
           </div>
 
-          {/* 우: 작업 사진 placeholder */}
-          {/*
-            TODO: 사진 자산 도착 시 아래 placeholder를 제거하고
-            상단 `import Image from "next/image";` 주석을 풀어
-            <Image /> 블록을 활성화하세요.
-            권장 경로: /public/images/about_working_01.jpg (세로형, 4:5 비율 권장)
-          */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-white/[0.04] ring-1 ring-white/10 sm:max-w-md sm:justify-self-center lg:max-w-none lg:justify-self-stretch">
-            {/*
+          {/* 우: 브랜드 로고 */}
+          <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white/[0.04] ring-1 ring-white/10 sm:max-w-md sm:justify-self-center lg:max-w-none lg:justify-self-stretch">
             <Image
-              src="/images/about_working_01.jpg"
-              alt="디테일러 이동식의 작업 모습"
+              src="/images/about_logo_01.jpeg"
+              alt="The 6 Garage 로고"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 512px"
             />
-            */}
-
-            {/* placeholder UI — 실제 사진 삽입 시 이 블록은 삭제 */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/40">
-              <svg
-                className="h-12 w-12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                />
-              </svg>
-              <p className="text-xs uppercase tracking-[0.2em]">
-                Working Photo
-              </p>
-            </div>
           </div>
         </div>
 
@@ -115,7 +85,7 @@ export function AboutStory() {
         {/* Pull-quote */}
         <figure className="mt-14 border-t border-white/15 pt-10 text-center sm:mt-20 sm:pt-14">
           <blockquote className="mx-auto max-w-2xl text-pretty text-lg font-medium italic leading-relaxed text-white sm:text-xl">
-            “고객님의 소중한 차량의 외장, 앞으로 직접 관리해 드리겠습니다.”
+            “고객님의 소중한 차량의 외장, 앞으로 제가 관리해 드리겠습니다.”
           </blockquote>
           <figcaption className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-lime-200">
             — Detailor 이동식
