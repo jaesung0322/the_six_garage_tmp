@@ -17,7 +17,7 @@ export function AboutStory() {
             className="mx-auto mt-4 block h-px w-12 bg-white/40"
           />
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
-            정직함으로 키운 개인 오토케어 디테일링 브랜드
+            정직함으로 키운 개인 디테일링 오토케어 브랜드
           </p>
         </header>
 
@@ -27,7 +27,7 @@ export function AboutStory() {
           <div className="space-y-5 text-base leading-relaxed text-white/85 sm:text-lg">
             <p>
               <span className="font-bold text-white">The 6 Garage</span>
-              는 오토케어 서비스를 제공하는{" "}
+              는 디테일링 오토케어 서비스를 제공하는{" "}
               <br className="hidden lg:block" />
               일명 젊은 차덕후의 개인 브랜드입니다.
             </p>
