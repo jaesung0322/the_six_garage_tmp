@@ -17,7 +17,7 @@ export function AboutStory() {
             className="mx-auto mt-4 block h-px w-12 bg-white/40"
           />
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
-            안양 기반, 신뢰로 키운 개인 디테일링 브랜드
+            정직함으로 키운 개인 오토케어 디테일링 브랜드
           </p>
         </header>
 
@@ -27,12 +27,12 @@ export function AboutStory() {
           <div className="space-y-5 text-base leading-relaxed text-white/85 sm:text-lg">
             <p>
               <span className="font-bold text-white">The 6 Garage</span>
-              는 안양을 기반으로 디테일링 · 세차 서비스를 제공하는
-              <span className="whitespace-nowrap"> 젊은 세차 환자의 </span>
+              는 오토케어 서비스를 제공하는
+              <span className="whitespace-nowrap"> 젊은 일명 차덕후의 </span>
               개인 브랜드입니다.
             </p>
             <p>
-              출장 픽업 세차만 해도 2년 차에 접어든 나름 안양 지역에서는
+              출장 픽업 세차만 해도 2년 차에 접어든 나름 경기 남부지역에서는
               신뢰가 어느정도 쌓인 개인 출장 세차 브랜드로서, 보다 더 나은
               서비스를 위해 매일 공부하며 노력하고 있습니다.
             </p>
