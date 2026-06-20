@@ -1,3 +1,4 @@
+import { AboutStory } from "@/components/landing/AboutStory";
 import { CTABanner } from "@/components/landing/CTABanner";
 import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
@@ -26,6 +27,9 @@ export default function Home() {
           <ServiceGrid />
         </Reveal>
           */}
+        <Reveal>
+          <AboutStory />
+        </Reveal>
         <Reveal>
           <ServiceShowcase />
         </Reveal>
