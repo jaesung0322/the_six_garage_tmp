@@ -8,7 +8,7 @@ const nav = [
   { href: "#about", label: "ABOUT" },
   { href: "#services", label: "SERVICES" },
   { href: "#gallery", label: "GALLERY" },
-  { href: "#location", label: "LOCATION" },
+  { href: "#directions", label: "DIRECTIONS" },
 ];
 
 export function SiteHeader() {

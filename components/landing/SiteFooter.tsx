@@ -45,11 +45,11 @@ export function SiteFooter() {
           </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
-              Locations
+              Directions
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="#NaverMap" className="hover:text-white">
+                <Link href="#directions" className="hover:text-white">
                   Naver Map
                 </Link>
               </li>

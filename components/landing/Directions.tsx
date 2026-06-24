@@ -1,19 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export function Location() {
+export function Directions() {
   return (
     <section
-      id="location"
+      id="directions"
       className="bg-brand py-12 sm:py-16"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            오시는 길
+            Directions
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-sm text-white/80 sm:text-base">
-            방문 전 영업시간을 한 번 더 확인해 주세요.
+            Check Business Hours Before Visiting.
           </p>
         </header>
 
@@ -91,7 +91,7 @@ export function Location() {
               href="#"
               className="mt-2 block text-lg font-semibold text-zinc-900 transition-colors hover:text-brand"
             >
-              KAKAO TALK : @the6garage
+              the6garage
             </a>
           </div>
 

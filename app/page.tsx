@@ -2,12 +2,13 @@ import { AboutStory } from "@/components/landing/AboutStory";
 import { CTABanner } from "@/components/landing/CTABanner";
 import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
-import { Location } from "@/components/landing/Location";
+import { Directions } from "@/components/landing/Directions";
 import { Reveal } from "@/components/landing/Reveal";
 import { ServiceGrid } from "@/components/landing/ServiceGrid";
 import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteHeader } from "@/components/landing/SiteHeader";
+import { YouTubeSection } from "@/components/landing/YouTubeSection";
 
 export default function Home() {
   return (
@@ -49,7 +50,10 @@ export default function Home() {
           <GalleryStrip />
         </Reveal>
         <Reveal>
-          <Location />
+          <YouTubeSection />
+        </Reveal>
+        <Reveal>
+          <Directions />
         </Reveal>
         {/*
         <Reveal>
