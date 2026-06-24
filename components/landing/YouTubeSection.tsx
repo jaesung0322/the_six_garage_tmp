@@ -17,9 +17,6 @@ export function YouTubeSection() {
             aria-hidden
             className="mx-auto mt-4 block h-px w-12 bg-white/40"
           />
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
-            The 6 Garage 작업 과정과 서비스를 영상으로 만나보세요.
-          </p>
         </header>
 
         <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-lg bg-black/40 ring-1 ring-white/10 sm:mt-10">
