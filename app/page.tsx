@@ -49,7 +49,7 @@ export default function Home() {
         <Reveal>
           <GalleryStrip />
         </Reveal>
-        <Reveal>
+        <Reveal className="flex min-h-0 flex-col">
           <YouTubeSection />
         </Reveal>
         <Reveal>

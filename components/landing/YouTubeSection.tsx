@@ -1,25 +1,28 @@
 // TODO: YouTube URL의 watch?v= 뒤 영상 ID로 교체하세요.
 // 예) https://www.youtube.com/watch?v=abc123xyz → "abc123xyz"
-const YOUTUBE_VIDEO_ID = "";
+const YOUTUBE_VIDEO_ID = "bLrCyE-4Q4I";
 
 export function YouTubeSection() {
   return (
-    <section id="videos" className="bg-zinc-950 py-12 sm:py-16">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-200 sm:text-sm">
-            Watch
-          </p>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            VIDEO
-          </h2>
-          <span
-            aria-hidden
-            className="mx-auto mt-4 block h-px w-12 bg-white/40"
-          />
-        </header>
+    <section
+      id="videos"
+      className="relative flex min-h-dvh flex-col bg-zinc-950"
+    >
+      <header className="relative z-10 shrink-0 px-4 pb-6 pt-14 text-center sm:px-6 sm:pb-8 sm:pt-16 lg:px-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-200 sm:text-sm">
+          Watch
+        </p>
+        <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          VIDEO
+        </h2>
+        <span
+          aria-hidden
+          className="mx-auto mt-4 block h-px w-12 bg-white/40"
+        />
+      </header>
 
-        <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-lg bg-black/40 ring-1 ring-white/10 sm:mt-10">
+      <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="relative aspect-video w-full max-w-5xl overflow-hidden rounded-lg bg-black/40 ring-1 ring-white/10">
           {YOUTUBE_VIDEO_ID ? (
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}`}
