@@ -21,25 +21,17 @@ export function SiteFooter() {
               Services
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li>
-                <Link href="#CarWash" className="hover:text-white">
+              <li>                
                   Car Wash
-                </Link>
               </li>
               <li>
-                <Link href="#Detailing" className="hover:text-white">
                   Detailing
-                </Link>
               </li>
               <li>
-                <Link href="#Polishing" className="hover:text-white">
                   Polishing
-                </Link>
               </li>
               <li>
-                <Link href="#DressUp" className="hover:text-white">
                   Dress Up
-                </Link>
               </li>
             </ul>
           </div>
