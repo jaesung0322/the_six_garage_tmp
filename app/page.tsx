@@ -1,73 +1,46 @@
 import { AboutStory } from "@/components/landing/AboutStory";
-import { CTABanner } from "@/components/landing/CTABanner";
 import { GalleryStrip } from "@/components/landing/GalleryStrip";
 import { Hero } from "@/components/landing/Hero";
 import { Directions } from "@/components/landing/Directions";
 import { Reveal } from "@/components/landing/Reveal";
-import { ServiceGrid } from "@/components/landing/ServiceGrid";
 import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { YouTubeSection } from "@/components/landing/YouTubeSection";
+import { getSiteContent } from "@/lib/cms/repository";
 
-export default function Home() {
+/** CMS 저장 직후 최신 콘텐츠를 반영하기 위해 매 요청 조회 */
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const content = await getSiteContent();
+
   return (
     <div className="font-sans text-zinc-900 antialiased">
       <div className="flex min-h-dvh flex-col">
-        <SiteHeader />
-        <Reveal
-          animateOnMount
-          className="flex min-h-0 flex-1 flex-col"
-        >
-          <Hero />
+        <SiteHeader content={content.header} />
+        <Reveal animateOnMount className="flex min-h-0 flex-1 flex-col">
+          <Hero content={content.hero} />
         </Reveal>
       </div>
       <main>
-        {/*
         <Reveal>
-          <ServiceGrid />
-        </Reveal>
-          */}
-        <Reveal>
-          <AboutStory />
+          <AboutStory content={content.about} />
         </Reveal>
         <Reveal>
-          <ServiceShowcase />
+          <ServiceShowcase content={content.services} />
         </Reveal>
-        {/*
         <Reveal>
-          <CTABanner
-            id="book"
-            title="Protect your vehicle today"
-            subtitle="Book a consult or drop-off window that fits your schedule."
-            ctaLabel="Schedule today"
-            ctaHref="#contact"
-            variant="brand"
-          />
-        </Reveal>
-        */}
-        <Reveal>
-          <GalleryStrip />
+          <GalleryStrip content={content.gallery} />
         </Reveal>
         <Reveal className="flex min-h-0 flex-col">
-          <YouTubeSection />
+          <YouTubeSection content={content.youtube} />
         </Reveal>
         <Reveal>
-          <Directions />
+          <Directions content={content.directions} />
         </Reveal>
-        {/*
         <Reveal>
-          <CTABanner
-            title="Time to get your vehicle to look its best"
-            subtitle="Walk through options with a specialist before work begins."
-            ctaLabel="Get started"
-            ctaHref="#contact"
-            variant="dark"
-          />
-        </Reveal>
-        */}
-        <Reveal>
-          <SiteFooter />
+          <SiteFooter content={content.footer} />
         </Reveal>
       </main>
     </div>

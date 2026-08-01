@@ -1,17 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { HeroContent } from "@/lib/cms/types";
 
-const heroImage = "/images/hero_01_01.jpg";
+export function Hero({ content }: { content: HeroContent }) {
+  if (!content.visible) return null;
 
-export function Hero() {
+  const bodyLines = content.body.split("\n").filter(Boolean);
+
   return (
     <section className="relative flex min-h-0 flex-1 flex-col bg-brand">
       <div className="relative flex min-h-0 flex-1 flex-col">
         <div className="absolute inset-0 min-h-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src={heroImage}
-              alt="Professional vehicle bay"
+              src={content.image}
+              alt={content.imageAlt}
               fill
               priority
               className="object-cover"
@@ -26,26 +29,31 @@ export function Hero() {
 
         <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-4xl flex-1 flex-col justify-end px-4 pb-20 pt-[calc(var(--slant-shift)+2rem)] text-center sm:justify-center sm:px-6 sm:pb-28 sm:pt-[calc(var(--slant-shift)+3rem)] lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-lime-200">
-            Local vehicle care
+            {content.eyebrow}
           </p>
           <h1 className="text-balance font-bold leading-tight tracking-tight text-white">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              The 6 Garage
+              {content.headline}
             </span>
             <span className="mt-1 block whitespace-nowrap text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-              Detailing &amp; Auto Care Services
+              {content.subheadline}
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg">
-            외부 · 내부 세차 및 디테일링 그리고 좋은 제품으로 광택을 꼼꼼히 진행하고<br/>차량 드레스 업 작업에 대한 맞춤 서비스도 함께합니다.
+            {bodyLines.map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                {line}
+              </span>
+            ))}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
-              href="#services"
+              href={content.ctaHref}
               className="inline-flex w-full min-w-[200px] items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand shadow-lg transition-opacity hover:opacity-90 sm:w-auto"
             >
-              서비스 보기
-            </Link>            
+              {content.ctaLabel}
+            </Link>
           </div>
         </div>
       </div>

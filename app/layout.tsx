@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { getSection } from "@/lib/cms/repository";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,30 +19,31 @@ const metadataBaseUrl =
     ? `https://${process.env.VERCEL_URL}`
     : "http://localhost:3000");
 
-export const metadata: Metadata = {
-  metadataBase: new URL(metadataBaseUrl),
-  title: "The 6 Garage | Vehicle Detailing & Paint Protection",
-  description:
-    "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
-  openGraph: {
-    title: "The 6 Garage | Vehicle Detailing & Paint Protection",
-    description:
-      "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
-    images: [
-      {
-        url: "/images/sns_01.jpg",
-        alt: "The 6 Garage",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "The 6 Garage | Vehicle Detailing & Paint Protection",
-    description:
-      "Detailing, paint protection film, ceramic coating, and window tint—professional care for your vehicle.",
-    images: ["/images/sns_01.jpg"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const site = await getSection("site");
+
+  return {
+    metadataBase: new URL(metadataBaseUrl),
+    title: site.title,
+    description: site.description,
+    openGraph: {
+      title: site.title,
+      description: site.description,
+      images: [
+        {
+          url: site.ogImage,
+          alt: site.ogImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: site.title,
+      description: site.description,
+      images: [site.ogImage],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -50,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

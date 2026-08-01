@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# admin uploads (keep folder structure)
+/public/uploads/**
+!/public/uploads/**/
+!/public/uploads/**/.gitkeep
+
+# local CMS fallback (Supabase unset)
+/data/site-content.json

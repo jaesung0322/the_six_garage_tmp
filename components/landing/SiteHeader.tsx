@@ -2,20 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import type { HeaderContent } from "@/lib/cms/types";
 
-const nav = [
-  { href: "#top", label: "HOME" },
-  { href: "#about", label: "ABOUT" },
-  { href: "#services", label: "SERVICES" },
-  { href: "#gallery", label: "GALLERY" },
-  { href: "#videos", label: "VIDEO" },
-  { href: "#directions", label: "DIRECTIONS" },
-];
-
-export function SiteHeader() {
+export function SiteHeader({ content }: { content: HeaderContent }) {
   const [open, setOpen] = useState(false);
+  const nav = content.navItems.filter((item) => item.visible);
 
-  // ESC 키로 닫기 + 메뉴 열린 동안 본문 스크롤 잠금
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -30,10 +22,6 @@ export function SiteHeader() {
     };
   }, [open]);
 
-  // 메뉴 내 해시 링크 클릭 처리:
-  // 1) 패널을 먼저 닫고 본문 스크롤 잠금을 동기적으로 해제한 뒤
-  // 2) 다음 프레임에서 해시 이동을 수행해야
-  //    scroll-padding-top(=헤더 높이) 보정이 정확히 적용된다.
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
@@ -41,21 +29,18 @@ export function SiteHeader() {
     if (!href.startsWith("#")) return;
     e.preventDefault();
     setOpen(false);
-    // useEffect cleanup보다 먼저 본문 스크롤을 풀어 즉시 스크롤 가능 상태로 만든다.
     document.body.style.overflow = "";
 
     const id = href.slice(1);
     const target =
       id === "top" ? document.documentElement : document.getElementById(id);
 
-    // 패널 닫힘 트랜지션 시작 직후 다음 프레임에서 스크롤
     requestAnimationFrame(() => {
       if (target instanceof HTMLElement) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
-      // URL 해시도 반영(브라우저 히스토리)
       if (href !== window.location.hash) {
         history.replaceState(null, "", href);
       }
@@ -70,10 +55,10 @@ export function SiteHeader() {
             href="/"
             className="text-lg font-bold tracking-tight text-white sm:text-xl"
           >
-            The 6<span className="text-brand"> Garage</span>
+            {content.brandPrefix}
+            <span className="text-brand">{content.brandAccent}</span>
           </Link>
 
-          {/* 햄버거 버튼 (PC, 모바일 공통) */}
           <button
             type="button"
             aria-label="메뉴 열기"
@@ -99,7 +84,6 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* 백드롭 */}
       <div
         onClick={() => setOpen(false)}
         aria-hidden
@@ -108,7 +92,6 @@ export function SiteHeader() {
         }`}
       />
 
-      {/* 슬라이딩 패널 (우측에서 열림) */}
       <aside
         id="site-menu"
         aria-label="사이트 내비게이션"
@@ -146,7 +129,7 @@ export function SiteHeader() {
         <nav className="flex flex-col gap-1 px-3 py-6 sm:px-4">
           {nav.map((item) => (
             <Link
-              key={item.href}
+              key={item.id}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               tabIndex={open ? 0 : -1}
